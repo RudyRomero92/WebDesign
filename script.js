@@ -4,10 +4,31 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
 s1.src='https://embed.tawk.to/58f9197164f23d19a89ae54a/1g9401lco';
-s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+const searchBar = document.getElementById("searchbar");
+const searchContainer = document.getElementById("searchContainer");
+function searchLinks() {
+  let searchBarValue = document.getElementById("searchbar").value;
+  searchBarValue = searchBarValue.toLowerCase();
+  let links = document.querySelectorAll(".links");
+  for (i = 0; i < links.length; i++) {
+    if (!links[i].innerHTML.toLowerCase().includes(searchBarValue)) {
+      links[i].style.display = "none";
+    } else {
+      links[i].style.display = "list-item";
+    }
+    if (searchBar.value === "") {
+      links[i].style.display = "none";
+    }
+  }
+}
+function toggleSearch() {
+  searchContainer.classList.toggle("toggleSearch");
+  searchBar.value = "";
+  searchLinks();
+}
 const header = document.getElementById("header");
 const headerLink = document.querySelectorAll(".headerLink");
 const menuButton = document.getElementsByClassName("container")[0];
@@ -25,7 +46,7 @@ const slideGallery = [
   "https://source.unsplash.com/random?robotics",
 ];
 const contactPhotos = [
- "images/meOne.jpg",
+ "images/meTwo.jpg",
  "images/KayKayKhris2.jpg",
  "https://source.unsplash.com/random?portrait",
  "https://source.unsplash.com/random?man" 
@@ -143,5 +164,4 @@ var greenIcon = L.icon({
 
 L.marker([4.769239, 7.019775], {icon: greenIcon}).addTo(map).bindPopup("Basket House P.M.B 5043 Port Harcourt Nigeria 👋").openPopup();
 map.scrollWheelZoom.disable();
-window.addEventListener("scroll", checkScroll);
 
