@@ -468,8 +468,9 @@ label>svg {
   gap: 20px;
   flex-wrap: wrap;
   align-content: center;
-  padding: 50px 20px 50px 20px;
+  padding: 50px 20px 75px 20px;
   justify-content: space-between;
+  position:relative;
 }
 .footerSection{
  height:300px;
@@ -489,6 +490,26 @@ font-size: .7rem;
 }
 .footerSection>a{
 color:#acffa0;
+}
+#backToTop{
+  width:100%;
+  position: absolute;
+  bottom:0;
+  right:0;
+ display:flex; 
+ justify-content: center;
+ align-items:center;
+ flex-direction:column;
+}
+#backToTop>a>svg:hover{
+ fill:yellowgreen; 
+}
+#backToTop>a>svg:active{
+ fill:white; 
+}
+svg#toTopBtn {
+  position: relative;
+  bottom: -18px;
 }
 @media only screen and (max-width: 600px) {
   h1{font-size:2rem;}

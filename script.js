@@ -1,3 +1,13 @@
+
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58f9197164f23d19a89ae54a/1g9401lco';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 const header = document.getElementById("header");
 const headerLink = document.querySelectorAll(".headerLink");
 const menuButton = document.getElementsByClassName("container")[0];
@@ -6,11 +16,17 @@ const slideGallery = [
   "https://source.unsplash.com/random?student",
   "https://source.unsplash.com/random?students",
   "https://source.unsplash.com/random?school",
-  "https://source.unsplash.com/random?homework"
+  "https://source.unsplash.com/random?homework",
+  "https://source.unsplash.com/random?study",
+  "https://source.unsplash.com/random?library",
+  "https://source.unsplash.com/random?coding",
+  "https://source.unsplash.com/random?programming",
+  "https://source.unsplash.com/random?teacher",
+  "https://source.unsplash.com/random?robotics",
 ];
 const contactPhotos = [
  "images/meOne.jpg",
- "images/KayKayKhris.jpg",
+ "images/KayKayKhris2.jpg",
  "https://source.unsplash.com/random?portrait",
  "https://source.unsplash.com/random?man" 
 ];
@@ -128,3 +144,4 @@ var greenIcon = L.icon({
 L.marker([4.769239, 7.019775], {icon: greenIcon}).addTo(map).bindPopup("Basket House P.M.B 5043 Port Harcourt Nigeria 👋").openPopup();
 map.scrollWheelZoom.disable();
 window.addEventListener("scroll", checkScroll);
+
