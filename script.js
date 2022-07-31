@@ -10,6 +10,7 @@ s0.parentNode.insertBefore(s1,s0);
 const searchBar = document.getElementById("searchbar");
 const searchContainer = document.getElementById("searchContainer");
 function searchLinks() {
+  searchContainer.style.display="block";
   let searchBarValue = document.getElementById("searchbar").value;
   searchBarValue = searchBarValue.toLowerCase();
   let links = document.querySelectorAll(".links");
@@ -23,11 +24,6 @@ function searchLinks() {
       links[i].style.display = "none";
     }
   }
-}
-function toggleSearch() {
-  searchContainer.classList.toggle("toggleSearch");
-  searchBar.value = "";
-  searchLinks();
 }
 const header = document.getElementById("header");
 const headerLink = document.querySelectorAll(".headerLink");
@@ -56,6 +52,8 @@ function myFunction(x) {
 }
 
 menuButton.addEventListener("click", () => {
+  searchBar.value="";
+  searchContainer.style.display="none";
   header.className === "openHeader"
     ? (header.className = "closeHeader")
     : (header.className = "openHeader");
@@ -66,14 +64,18 @@ function closeMobileMenu() {
 }
 window.addEventListener("resize", () => {
   console.log(`Current Window Size: ${window.innerWidth}px`);
-  if (window.innerWidth >= 600) {
+  if (window.innerWidth >= 800) {
     closeMobileMenu();
+    searchContainer.style.display="none";
+    searchBar.value="";
   }
 });
 
 headerLink.forEach((element, index) => {
   element.addEventListener("click", () => {
     closeMobileMenu();
+    searchContainer.style.display="none";
+    searchBar.value="";
   });
 });
 
